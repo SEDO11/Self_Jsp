@@ -7,7 +7,7 @@
 	String uid = request.getParameter("id");
 	String ucontent = request.getParameter("content");
 	if(uid.equals(null) || ucontent.equals(null)) {
-		out.print("id, content 이 셋중 하나가 null 값입니다.");
+		out.print("id, content 둘 중 하나가 null 값입니다.");
 	} else {
 	String sql = "INSERT INTO feed(id, content) VALUES('" + uid + "', '" + ucontent + "')";
 		

@@ -22,18 +22,13 @@ if (uid.equals(null)) {
 	// sql문을 실행할 객체 생성
 	PreparedStatement stmt = conn.prepareStatement(sql);
 	stmt.setString(1, uid);
-	try {
-		int count = stmt.executeUpdate();
-		if (count == 1) {
-			out.print("회원 탈퇴가 완료 되었습니다.");
-		} else {
-			out.print("해당 아이디는 회원 정보에 없습니다.");
-		}
-	} catch (Exception e) {
-		out.print("회원 탈퇴중 오류가 발생했습니다.");
-	} finally {
-		stmt.close(); conn.close();
+	int count = stmt.executeUpdate();
+	if (count == 1) {
+		out.print("회원 탈퇴가 완료 되었습니다.");
+	} else {
+		out.print("해당 아이디는 회원 정보에 없습니다.");
 	}
+	stmt.close(); conn.close();
 }
 %>
 <!DOCTYPE html>

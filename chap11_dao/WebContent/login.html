@@ -6,10 +6,10 @@
 </head>
 <body>
 	<!-- servlet이 아닌 jsp 호출을 이용 -->
-	<form action="c10_signup.jsp" method="post">
-		<table align=center>
+	<form action="c11_login.jsp" method="post" align="center">
+		<table>
 			<tr>
-				<td colspan=2 align=center height=40><b>회원가입</b></td>
+				<td colspan=2 align=center height=40><b>로그인</b></td>
 			</tr>
 			<tr>
 				<td align=right>아이디&nbsp;</td>
@@ -22,18 +22,8 @@
 				<td><input type="password" name="pw" required></td>
 			</tr>
 			<tr>
-				<td align=right>패스워드확인&nbsp;</td>
-				<!-- required는 필수로 입력되야 하는 값을 지칭한다. -->
-				<td><input type="password" name="pw2" required></td>
-			</tr>
-			<tr>
-				<td align=right>이름&nbsp;</td>
-				<!-- required는 필수로 입력되야 하는 값을 지칭한다. -->
-				<td><input type="text" name="n" required></td>
-			</tr>
-			<tr>
 				<td colspan=2 align=center height=50><input type="submit"
-					value="회원가입하기"></td>
+					value="로그인하기"></td>
 			</tr>
 		</table>
 	</form>

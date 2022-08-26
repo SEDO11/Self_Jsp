@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- 선언문, 함수나 변수 선언이 가능 -->
+<!-- 선언문, 메서드나 변수 선언이 가능 -->
 <%! 
 	String getDate() {
 		return (new Date()).toString();
@@ -16,7 +16,7 @@
 
 <%
 	request.setCharacterEncoding("utf-8"); // post방식에서 한글을 사용할 경우 사용되는 코드
-	String uid = request.getParameter("id");
+	String uid = request.getParameter("id"); // id를 문자열 형태로 저장
 	String res = "<h3>사용자 아이디: " + uid + "</h3>";
 	out.print(res); // out.print는 서블릿의 response.getWriter()와 같은 거
 %>
