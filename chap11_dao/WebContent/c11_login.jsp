@@ -14,7 +14,7 @@
 		out.print("비밀번호가 일치하지 않습니다.");
 	} else {
 		session.setAttribute("id", uid);
-		response.sendRedirect("c11_feedlist2.jsp");
+		response.sendRedirect("c11_userList.jsp");
 	}
 %>
 <!DOCTYPE html>
