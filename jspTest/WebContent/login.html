@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author"
+	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.104.2">
+<title>sign_up</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="../css/signin.css">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="text-center">
+	<main class="form-signin m-auto">
+		<form class="p-3 mx-auto my-auto col-lg-6 col-md-6 col-sm-4"
+			action="login.jsp" method="post">
+			<h1 class="h3 mb-3 fw-normal">회원가입</h1>
+
+			<div class="form-floating py-3">
+				<input type="text" class="form-control" name="id" placeholder="ID">
+				<label for="id">아이디</label>
+			</div>
+
+			<div class="form-floating py-3">
+				<input type="password" class="form-control" name="pw1"
+					placeholder="Password"> <label for="pw1">패스워드</label>
+			</div>
+
+			<div class="form-floating py-3">
+				<input type="password" class="form-control" name="pw2"
+					placeholder="Password"> <label for="pw2">패스워드(확인)</label>
+			</div>
+
+			<div class="form-floating py-3">
+				<input type="text" class="form-control" name="name"
+					placeholder="Name"> <label for="name">이름</label>
+			</div>
+
+			<input type="submit" class="w-100 btn btn-lg btn-primary" name="name"
+				value="회원가입하기">
+			<p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+		</form>
+	</main>
+</body>
+</html>
