@@ -1,14 +1,11 @@
 package com;
 
 import java.sql.*;
+import javax.naming.NamingException;
 
 public class Signup {
 	
-	private String dbURL = "jdbc:mysql://localhost:3306/web_sns";
-	private String dbID = "root";
-	private String dbPW = "0000";
-	
-	public int signup(String id, String pw1, String pw2, String name) throws SQLException {
+	public int signup(String id, String pw1, String pw2, String name) throws SQLException, NamingException {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		String sql = "INSERT INTO user(id, password, name) VALUES(?, ?, ?)";
@@ -23,8 +20,7 @@ public class Signup {
 		}
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection(dbURL, dbID, dbPW);
+            conn = ConnectionPool.get();
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, id);
             stmt.setString(2, pw1);
@@ -45,15 +41,14 @@ public class Signup {
 		return check;
 	}
 	
-	public int withdraw(String id) throws SQLException {
+	public int withdraw(String id) throws SQLException, NamingException {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		String sql = "DELETE FROM user WHERE id = ?";
 		int check = 0;
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection(dbURL, dbID, dbPW);
+            conn = ConnectionPool.get();
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, id);
             
@@ -72,7 +67,7 @@ public class Signup {
 		return check;
 	}
 	
-	public int idCheck(String id) throws SQLException {
+	public int idCheck(String id) throws SQLException, NamingException {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -80,8 +75,7 @@ public class Signup {
 		int check = 0;
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
+			conn = ConnectionPool.get();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			

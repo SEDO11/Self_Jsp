@@ -58,13 +58,13 @@
          Java HTTP Connector: /docs/config/http.html
          Java AJP  Connector: /docs/config/ajp.html
          APR (HTTP/AJP) Connector: /docs/apr.html
-         Define a non-SSL/TLS HTTP/1.1 Connector on port 8090
+         Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
     <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
-               port="8090" protocol="HTTP/1.1"
+               port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
     -->
@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="chap03_html1" path="/chap03_html1" reloadable="true" source="org.eclipse.jst.jee.server:chap03_html1"/><Context docBase="chap05_servlet1" path="/chap05_servlet1" reloadable="true" source="org.eclipse.jst.jee.server:chap05_servlet1"/><Context docBase="chap06_io1" path="/chap06_io1" reloadable="true" source="org.eclipse.jst.jee.server:chap06_io1"/><Context docBase="chap09_jdbc1" path="/chap09_jdbc1" reloadable="true" source="org.eclipse.jst.jee.server:chap09_jdbc1"/><Context docBase="chap10_jdbc2" path="/chap10_jdbc2" reloadable="true" source="org.eclipse.jst.jee.server:chap10_jdbc2"/><Context docBase="chap11_dao" path="/chap11_dao" reloadable="true" source="org.eclipse.jst.jee.server:chap11_dao"/><Context docBase="banking_system" path="/banking_system" reloadable="true" source="org.eclipse.jst.jee.server:banking_system"/><Context docBase="chap09_test1" path="/chap09_test1" reloadable="true" source="org.eclipse.jst.jee.server:chap09_test1"/><Context docBase="chap10_test2" path="/chap10_test2" reloadable="true" source="org.eclipse.jst.jee.server:chap10_test2"/><Context docBase="chap11_test1" path="/chap11_test1" reloadable="true" source="org.eclipse.jst.jee.server:chap11_test1"/><Context docBase="chap12_fileUpload" path="/chap12_fileUpload" reloadable="true" source="org.eclipse.jst.jee.server:chap12_fileUpload"/><Context docBase="file_upload" path="/file_upload" reloadable="true" source="org.eclipse.jst.jee.server:file_upload"/><Context docBase="test" path="/test" reloadable="true" source="org.eclipse.jst.jee.server:test"/><Context docBase="BBS" path="/BBS" reloadable="true" source="org.eclipse.jst.jee.server:BBS"/><Context docBase="jspTest" path="/jspTest" reloadable="true" source="org.eclipse.jst.jee.server:jspTest"/><Context docBase="chap07_jspio" path="/chap07_jspio" reloadable="true" source="org.eclipse.jst.jee.server:chap07_jspio"/></Host>
+      <Context docBase="chap11_dao" path="/chap11_dao" reloadable="true" source="org.eclipse.jst.jee.server:chap11_dao"/><Context docBase="jspTest" path="/jspTest" reloadable="true" source="org.eclipse.jst.jee.server:jspTest"/><Context docBase="jspText2" path="/jspText2" reloadable="true" source="org.eclipse.jst.jee.server:jspText2"/></Host>
     </Engine>
   </Service>
 </Server>
