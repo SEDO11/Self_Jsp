@@ -19,11 +19,20 @@
 	boolean count = dao.login(id, upw);
 	
 	if(count){
-		out.println("로그인에 성공했습니다.");
+		// out.println("로그인에 성공했습니다.");
+		session.setAttribute("id", dao.getId());
+		session.setAttribute("name", dao.getName());
+		response.sendRedirect("main.jsp");
 	} else {
-		out.println("로그인에 실패했습니다. \n아이디 혹은 비밀번호가 잘 못 되었습니다.");
+		%>
+		<script type="text/javascript">
+		alert('아이디 혹은 비밀번호가 일치하지 않습니다.')
+		window.location.href = 'logout.jsp';
+		</script>
+		<%
 	}
-	
 	%>
+	
+	
 </body>
 </html>
