@@ -22,14 +22,14 @@
 		%>
 		<script>
 	    alert('저장 성공');
-	    location.href="main.jsp";
+	    location.href="feed.jsp";
 	    </script>
 		<%
 	} else {
 		%>
 		<script>
 	    alert('저장 실패');
-	    location.href="main.jsp";
+	    location.href="feed.jsp";
 	    </script>
 		<%
 	}

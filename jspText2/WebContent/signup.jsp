@@ -12,19 +12,37 @@
 	request.setCharacterEncoding("utf-8");
 	
 	String id = request.getParameter("id");
-	String upw = request.getParameter("pw1");
+	String upw1 = request.getParameter("pw1");
+	String upw2 = request.getParameter("pw2");
 	String uname = request.getParameter("name");
+	
+	if(!upw1.equals(upw2)) {
+		%>
+		<script>
+			alert('비밀번호가 일치하지 않습니다.');
+			window.location.href = "signup.html";
+		</script>
+		<%
+	}
 	
 	UserDAO dao = new UserDAO();
 	
-	int count = dao.insert(id, upw, uname);
+	boolean count = dao.insert(id, upw1, uname);
 	
-	if(count == 0){
-		out.println("회원가입이 완료 되었습니다.");
-	} else if(count == 2) {
-		out.println("회원가입에 실패 했습니다. \n이미 존재하는 아이디 입니다.");
+	if(count){
+		%>
+		<script>
+			alert('회원가입에 성공하였습니다.');
+			window.location.href = "signup.html";
+		</script>
+		<%
 	} else {
-		out.println("회원가입 도중 에러가 발생했습니다.");
+		%>
+		<script>
+			alert('회원가입에 실패 했습니다. \n이미 존재하는 아이디 입니다.');
+			window.location.href = "signup.html";
+		</script>
+		<%
 	}
 	
 	%>

@@ -11,9 +11,8 @@
     session.invalidate();
 	%>
 	<script type="text/javascript">
-	alert('로그아웃')</script>
-	<%
-	response.sendRedirect("login.html");
-	%>
+	alert('로그아웃')
+	window.location.href = "login.html";
+	</script>
 </body>
 </html>
