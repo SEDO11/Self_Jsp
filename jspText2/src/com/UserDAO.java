@@ -66,9 +66,9 @@ public class UserDAO {
 	/* 회원가입
 	 * exists를 통해서 중복아이디 검사 후 중복된 아이디가 없으면 회원가입
 	 */
-	public int insert(String id, String pw, String name) throws SQLException, NamingException {
+	public boolean insert(String id, String pw, String name) throws SQLException, NamingException {
 		if (!exists(id)) {
-            return 0;
+            return false;
         }
 
         Connection conn = null;
@@ -86,7 +86,7 @@ public class UserDAO {
             close(conn, stmt, null);
         }
 
-        return 1;
+        return true;
 	}
 	
 	/*

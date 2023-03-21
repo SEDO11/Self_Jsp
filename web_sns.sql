@@ -1,0 +1,14 @@
+use web_sns;
+
+CREATE TABLE IF NOT EXISTS user (
+	id varchar(20) PRIMARY KEY,
+    password VARCHAR(16),
+    name VARCHAR(10),
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS feed(
+	id VARCHAR(20),
+    content VARCHAR(4096),
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
